@@ -1,0 +1,43 @@
+/* ==========================================================
+   VELVET DAY - ANIMATIONS
+   Soft transitions and micro-interactions. No JS dependency.
+   ========================================================== */
+:root { --animation-fast: 180ms ease; --animation-medium: 300ms ease; --animation-smooth: 450ms cubic-bezier(.22,1,.36,1); }
+.page-section.active { animation: velvetPageEnter 260ms ease both; }
+@keyframes velvetPageEnter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.content-card, .stat-card, .note-card, .checklist-card, .recurring-card, .reminder-card, .brain-dump-card { animation: velvetCardEnter 350ms cubic-bezier(.22,1,.36,1) backwards; }
+@keyframes velvetCardEnter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.dashboard-grid > :nth-child(1) { animation-delay: 40ms; }
+.dashboard-grid > :nth-child(2) { animation-delay: 80ms; }
+.dashboard-grid > :nth-child(3) { animation-delay: 120ms; }
+.dashboard-grid > :nth-child(4) { animation-delay: 160ms; }
+button, .primary-button, .secondary-button, .icon-button, .nav-link, .task-item, .calendar-day { transition: background-color var(--animation-fast), color var(--animation-fast), border-color var(--animation-fast), box-shadow var(--animation-fast), transform var(--animation-fast); }
+button:active, .primary-button:active, .secondary-button:active, .icon-button:active { transform: scale(.97); }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  .content-card:hover, .stat-card:hover, .note-card:hover, .checklist-card:hover, .recurring-card:hover, .reminder-card:hover { transform: translateY(-2px); }
+  .nav-link:hover { transform: translateX(2px); }
+  .calendar-day:hover { transform: scale(1.035); }
+}
+.task-item.completed { opacity: .68; }
+.task-item.completed .task-title { text-decoration: line-through; text-decoration-color: var(--accent-purple); }
+.task-checkbox:active { transform: scale(.88); }
+.progress-bar-fill, .progress-fill { transition: width 600ms cubic-bezier(.22,1,.36,1); }
+.progress-circle { transition: background 600ms ease; }
+.calendar-day.selected { animation: velvetCalendarSelect 220ms ease; }
+@keyframes velvetCalendarSelect { 0% { transform: scale(.94); } 65% { transform: scale(1.04); } 100% { transform: scale(1); } }
+.sidebar, .sidebar-overlay { transition: transform 280ms cubic-bezier(.22,1,.36,1), opacity 250ms ease, visibility 250ms ease; }
+.search-dialog { animation: velvetSearchEnter 250ms cubic-bezier(.22,1,.36,1); }
+@keyframes velvetSearchEnter { from { opacity: 0; transform: translateY(-9px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.toast { animation: velvetToastEnter 300ms cubic-bezier(.22,1,.36,1); }
+.toast.toast-exit { animation: velvetToastExit 220ms ease forwards; }
+@keyframes velvetToastEnter { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes velvetToastExit { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(16px); } }
+.float-decoration { animation: velvetFloat 4s ease-in-out infinite; }
+@keyframes velvetFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.sparkle { animation: velvetSparkle 2.5s ease-in-out infinite; }
+@keyframes velvetSparkle { 0%,100% { opacity: .4; transform: scale(.85) rotate(0deg); } 50% { opacity: 1; transform: scale(1.1) rotate(12deg); } }
+.heart-decoration { animation: velvetHeartbeat 2.8s ease-in-out infinite; }
+@keyframes velvetHeartbeat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.1); } 30% { transform: scale(1); } 45% { transform: scale(1.06); } }
+.loading-spinner { animation: velvetSpin 800ms linear infinite; }
+@keyframes velvetSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } }
