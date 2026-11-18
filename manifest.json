@@ -1,0 +1,38 @@
+{
+  "id": "./",
+  "name": "Velvet Day - Your Personal Planner",
+  "short_name": "Velvet Day",
+  "description": "Your personal space to plan, organize, focus and grow.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#17151d",
+  "theme_color": "#17151d",
+  "categories": [
+    "productivity",
+    "lifestyle",
+    "utilities"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
